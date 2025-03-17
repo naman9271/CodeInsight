@@ -27,6 +27,7 @@ function DashboardPage() {
     try {
       await updateStatus({ id: interviewId, status });
       toast.success(`Interview marked as ${status}`);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("Failed to update status");
     }
@@ -59,9 +60,9 @@ function DashboardPage() {
                   {groupedInterviews[category.id].map((interview: Interview) => {
                     const candidateInfo = getCandidateInfo(users, interview.candidateId);
                     const startTime = new Date(interview.startTime);
-
+                  
                     return (
-                      <Card className="hover:shadow-md transition-all">
+                      <Card key={interview._id} className="hover:shadow-md transition-all">
                         {/* CANDIDATE INFO */}
                         <CardHeader className="p-4">
                           <div className="flex items-center gap-3">
@@ -75,7 +76,7 @@ function DashboardPage() {
                             </div>
                           </div>
                         </CardHeader>
-
+                  
                         {/* DATE &  TIME */}
                         <CardContent className="p-4">
                           <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -89,7 +90,7 @@ function DashboardPage() {
                             </div>
                           </div>
                         </CardContent>
-
+                  
                         {/* PASS & FAIL BUTTONS */}
                         <CardFooter className="p-4 pt-0 flex flex-col gap-3">
                           {interview.status === "completed" && (

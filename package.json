@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.12.5",
     "@radix-ui/react-slot": "^1.1.2",
+    "@stream-io/node-sdk": "^0.4.18",
     "@stream-io/video-react-sdk": "^1.12.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -19,6 +20,7 @@
     "next": "14.2.23",
     "react": "^18",
     "react-dom": "^18",
+    "svix": "^1.61.4",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7"
   },
